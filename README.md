@@ -150,4 +150,5 @@ ghcr.io/<owner>/<repo>
 ```
 
 The workflow runs tests first and publishes only when a GitHub release is
-published.
+published. It pushes only the release tag, for example `v0.0.1`, plus `latest`
+for non-prerelease releases.

@@ -57,10 +57,6 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}
           tags: |
             type=raw,value=${{ github.event.release.tag_name }}
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha,prefix=sha-
             type=raw,value=latest,enable=${{ !github.event.release.prerelease }}
 
       - name: Build and publish image
