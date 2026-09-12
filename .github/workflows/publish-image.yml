@@ -13,7 +13,7 @@ jobs:
       sync-command: uv sync --locked --extra dev
   publish:
     needs: tests
-    uses: abhi1693/actions/.github/workflows/docker-build-push.yml@34e92ba1eee6a47e9b10f13e2180114fc01b6027
+    uses: abhi1693/actions/.github/workflows/docker-build-push.yml@9cbb37f0a3dac0fc6d9cfce7fc3d4825d970395d
     permissions:
       contents: read
       packages: write
@@ -24,7 +24,7 @@ jobs:
       platforms: linux/amd64
       cache-scope: kafka-hooks
       tags: |-
-        type=raw,value=${{ github.event.release.tag_name }}
+        type=semver,pattern={{version}}
         type=raw,value=latest,enable=${{ !github.event.release.prerelease }}
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
