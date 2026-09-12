@@ -13,7 +13,7 @@ jobs:
       sync-command: uv sync --locked --extra dev
   publish:
     needs: tests
-    uses: abhi1693/actions/.github/workflows/docker-build-push.yml@9cbb37f0a3dac0fc6d9cfce7fc3d4825d970395d
+    uses: abhi1693/actions/.github/workflows/docker-build-push.yml@98222de88f6768904e43a1a92a32e2bdc9a16e4c
     permissions:
       contents: read
       packages: write
